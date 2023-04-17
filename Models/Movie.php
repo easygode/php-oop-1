@@ -19,6 +19,25 @@ class Movies
     {
         return "name: {$this->name} - duration: {$this->duration} minuti";
     }
+
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    public function get_genre_name_as_string()
+    {
+        $genres = [];
+
+        foreach ($this->genre as $genre) {
+            array_push($genres, $genre->name);
+        }
+
+        return implode(', ', $genres);
+
+        //return $genres;
+    }
+    
 }
 
 ?>
